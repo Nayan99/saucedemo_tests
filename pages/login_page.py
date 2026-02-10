@@ -1,4 +1,5 @@
 from playwright.sync_api import Page
+import test_data as td
 
 class LoginPage:
     USERNAME_INPUT = "#user-name"
@@ -10,7 +11,7 @@ class LoginPage:
         self.page = page
 
     def goto(self):
-        self.page.goto("https://www.saucedemo.com/")
+        self.page.goto(td.BASE_URL)
 
     def login(self, username: str, password: str):
         self.page.fill(self.USERNAME_INPUT, username)
